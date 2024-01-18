@@ -29,8 +29,6 @@ export function NavigationMenu({ phoneNumber }: {
       <div className="h-32 xl:hidden" />
       <div className="fixed flex z-10 items-center left-0 px-2 xl:px-8 top-10 uppercase font-bold backdrop-brightness-150 text-black bg-white/50">
         <MenuItem href="/">Home</MenuItem>
-        <MenuItem href="/about">About</MenuItem>
-        <MenuItem href="/contact">Contact</MenuItem>
         {
           phoneNumber &&
           <Link href={generateWhatsAppLink(phoneNumber)} className="p-4">
