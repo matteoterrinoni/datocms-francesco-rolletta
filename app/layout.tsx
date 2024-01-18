@@ -1,13 +1,12 @@
-import './globals.css';
-import { Playfair_Display, Poppins } from 'next/font/google';
-import { ActiveLink } from '@/components/ActiveLink';
-import { WhatsappIcon } from '@/components/WhatsappIcon';
 import { NavigationMenu } from '@/components/NavigationMenu';
-import { request } from '@/lib/dato';
-import { CSSProperties } from 'react';
-import type { Metadata } from 'next';
-import { renderMetaTags } from 'react-datocms/seo';
 import { graphql } from '@/gql';
+import { request } from '@/lib/dato';
+import { GoogleTagManager } from '@next/third-parties/google';
+import { Playfair_Display, Poppins } from 'next/font/google';
+import { CSSProperties } from 'react';
+import { renderMetaTags } from 'react-datocms/seo';
+import './globals.css';
+
 
 const query = graphql(/* GraphQL */ `
   query Layout {
@@ -78,6 +77,7 @@ export default async function RootLayout({
         <NavigationMenu phoneNumber={contactPage?.phoneNumber} />
         {children}
       </body>
+      <GoogleTagManager gtmId="AW-11472757303" />
     </html>
   );
 }
